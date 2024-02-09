@@ -72,5 +72,47 @@ def preprocess_data(data_df):
     df['saleDayOfWeek'] = df.saledate.dt.dayofweek
     df['saleDayOfYear'] = df.saledate.dt.dayofyear
     df.drop('saledate', axis = 1, inplace = True)
-
+    
+    missing_cols = set(feature_names_sorted) - set(list(df))
+    if len(missing_cols) > 0:
+        for col in missing_cols:
+            df[col] =  [0] * len(df)
+        new_col_names = list(df)
+        new_col_names.sort()
+        df = df.loc[:, new_col_names] 
+    else:
+        new_col_names = list(df)
+        new_col_names.sort()
+        df = df.loc[:, new_col_names]   
     return df
+
+feature_names_sorted = ['Backhoe_Mounting', 'Backhoe_Mounting_is_missing', 'Blade_Extension',
+                        'Blade_Extension_is_missing', 'Blade_Type', 'Blade_Type_is_missing',
+                        'Blade_Width', 'Blade_Width_is_missing', 'Coupler', 'Coupler_System',
+                        'Coupler_System_is_missing', 'Coupler_is_missing','Differential_Type',
+                        'Differential_Type_is_missing', 'Drive_System', 'Drive_System_is_missing',
+                        'Enclosure', 'Enclosure_Type', 'Enclosure_Type_is_missing', 'Enclosure_is_missing',
+                        'Engine_Horsepower', 'Engine_Horsepower_is_missing', 'Forks', 'Forks_is_missing',
+                        'Grouser_Tracks', 'Grouser_Tracks_is_missing', 'Grouser_Type', 'Grouser_Type_is_missing',
+                        'Hydraulics', 'Hydraulics_Flow', 'Hydraulics_Flow_is_missing', 'Hydraulics_is_missing',
+                        'MachineHoursCurrentMeter', 'MachineHoursCurrentMeter_is_missing', 'MachineID',
+                        'MachineID_is_missing', 'ModelID', 'ModelID_is_missing', 'Pad_Type',
+                        'Pad_Type_is_missing', 'Pattern_Changer', 'Pattern_Changer_is_missing', 'ProductGroup',
+                        'ProductGroupDesc', 'ProductGroupDesc_is_missing', 'ProductGroup_is_missing', 
+                        'ProductSize', 'ProductSize_is_missing', 'Pushblock', 'Pushblock_is_missing',
+                        'Ride_Control', 'Ride_Control_is_missing','Ripper', 'Ripper_is_missing',
+                        'SalePrice_is_missing', 'SalesID', 'SalesID_is_missing', 'Scarifier', 
+                        'Scarifier_is_missing', 'Steering_Controls', 'Steering_Controls_is_missing', 'Stick',
+                        'Stick_Length', 'Stick_Length_is_missing', 'Stick_is_missing', 'Thumb',
+                        'Thumb_is_missing', 'Tip_Control', 'Tip_Control_is_missing', 'Tire_Size',
+                        'Tire_Size_is_missing', 'Track_Type', 'Track_Type_is_missing', 'Transmission',
+                        'Transmission_is_missing', 'Travel_Controls', 'Travel_Controls_is_missing',
+                        'Turbocharged', 'Turbocharged_is_missing', 'Undercarriage_Pad_Width',
+                        'Undercarriage_Pad_Width_is_missing', 'UsageBand', 'UsageBand_is_missing',
+                        'YearMade', 'YearMade_is_missing', 'auctioneerID', 'auctioneerID_is_missing',
+                        'datasource', 'datasource_is_missing', 'fiBaseModel', 'fiBaseModel_is_missing',
+                        'fiModelDesc', 'fiModelDesc_is_missing', 'fiModelDescriptor',
+                        'fiModelDescriptor_is_missing', 'fiModelSeries', 'fiModelSeries_is_missing',
+                        'fiProductClassDesc', 'fiProductClassDesc_is_missing', 'fiSecondaryDesc',
+                        'fiSecondaryDesc_is_missing', 'saleDay', 'saleDayOfWeek', 'saleDayOfYear',
+                        'saleMonth', 'saleYear', 'saledate_is_missing','state', 'state_is_missing']
