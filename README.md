@@ -1,4 +1,4 @@
-# Predicting the Sale Price of Bulldozers using Machine Learning
+# Predicting the Sale Price of Bulldozers using RandomForestRegression
 ## The Goal 
 * "Predict the auction sale price for a piece of heavy equipment to create a "blue book" for bulldozers".
 The goal is to try and obtain a **better RMSLE** compared to the **best** score obtained at in the **Kaggle Competition**.
