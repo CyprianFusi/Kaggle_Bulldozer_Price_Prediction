@@ -1,7 +1,7 @@
 # Predicting the Sale Price of Bulldozers using RandomForestRegressor
 ## The Goal 
 * "Predict the auction sale price for a piece of heavy equipment to create a "blue book" for bulldozers".
-The goal is to try and obtain a **better RMSLE** compared to the **best** score obtained at in the **Kaggle Competition**.
+The goal was to try and obtain a **better RMSLE** compared to the **best** score obtained at in the **Kaggle Competition**.
 
 ## Results Obtained
 * Validation RMSLE obtained: **`0.21163`**, Validation R^2': `0.90759`
