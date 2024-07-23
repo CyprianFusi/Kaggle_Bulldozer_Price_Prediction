@@ -4,7 +4,7 @@
 The goal was to try and obtain a **better RMSLE** compared to the **best** score obtained at in the **Kaggle Competition**.
 
 ## Results Obtained
-* Validation RMSLE obtained: **`0.21163`**, Validation R^2': `0.90759`
+* Validation RMSLE obtained: **`0.21163`**, Validation $R^2$: `0.90759`
 * Best Kaggle RMSLE: **`0.22909`**
 
 ## Dataset
